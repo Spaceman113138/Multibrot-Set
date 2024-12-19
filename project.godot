@@ -1,0 +1,52 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Multibrot Sets"
+run/main_scene="res://world.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=1000
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[shader_globals]
+
+xRange={
+"type": "vec2",
+"value": Vector2(-2, 2)
+}
+yRange={
+"type": "vec2",
+"value": Vector2(-2, 2)
+}
+cutoff={
+"type": "float",
+"value": 2.0
+}
+power={
+"type": "float",
+"value": 2.0
+}
+maxItter={
+"type": "float",
+"value": 50.0
+}
+offset={
+"type": "vec2",
+"value": Vector2(0, 0)
+}

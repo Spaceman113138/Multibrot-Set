@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://b046e4r40wing"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_df7cj"]
+[ext_resource type="Shader" path="res://set.gdshader" id="1_eigho"]
+[ext_resource type="Script" path="res://set.gd" id="1_v5jjo"]
+[ext_resource type="PackedScene" uid="uid://hsantv3gg1ft" path="res://control.tscn" id="4_gltjo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lj87h"]
+shader = ExtResource("1_eigho")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qsi21"]
+orientation = 2
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_df7cj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="set" type="MeshInstance2D" parent="."]
+material = SubResource("ShaderMaterial_lj87h")
+mesh = SubResource("PlaneMesh_qsi21")
+script = ExtResource("1_v5jjo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_gltjo")]
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 428.0
+offset_bottom = 31.0
+grow_horizontal = 1

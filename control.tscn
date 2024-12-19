@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://hsantv3gg1ft"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_nkdww"]
+
+[node name="Control" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_nkdww")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Power" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Power: "
+
+[node name="power edit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="add 1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "+1"
+
+[node name="minus 2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "-1"
+
+[node name="Itterations" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Itterations: "
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="add 50" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "+50"
+
+[node name="minus 50" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "-50"
+
+[connection signal="text_changed" from="HBoxContainer/power edit" to="." method="_on_power_edit_text_changed"]
+[connection signal="pressed" from="HBoxContainer/add 1" to="." method="_on_add_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/minus 2" to="." method="_on_minus_2_pressed"]
+[connection signal="text_changed" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="HBoxContainer/add 50" to="." method="_on_add_50_pressed"]
+[connection signal="pressed" from="HBoxContainer/minus 50" to="." method="_on_minus_50_pressed"]
